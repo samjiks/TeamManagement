@@ -1,0 +1,107 @@
+ function view(){
+	 var php = "<?php
+		include_once('dbconnect.php');
+
+		$result = mysql_query("SELECT * FROM registration_table", $link);
+
+		while($row = mysql_fetch_array($result))
+		{
+			echo $row['firstName'] . " " . $row['lastname'];
+			echo '<br>';
+		}
+
+		mysql_close($link);
+
+	 ?>";
+			$("#createid").empty();
+		$("#createid").append(php);
+	 
+	 
+	 }
+	 
+				$result2 = mysql_query("Select firstname, lastname, age, count(case when gender='male' then 1 end) as male_cnt, count(case when gender='female' then 1 end) as female_cnt, count(*) as total_cnt, team_id from registration_table where team_id IN (Select team_id from team_table where teamname = '".$row['teamname']."')", $link);
+	 	
+		
+		firstname like '%".$first_name."%' OR  lastname like '%".$last_name."%' OR 
+		
+		if($_POST['teamname'] == 'Select'){
+				echo "Updates not selected";
+			}else{
+				echo $_POST['teamname'];
+				/* $teamsql = "Select team_id from team_table where teamname='".$_POST['teamname']."'";
+				$teamresult = mysql_query($teamsql, $link); */
+				//echo $teamresult['team_id'];
+			//	  $sql = "UPDATE registration_table SET team_id = "$_POST['teamname']" WHERE User_id = '$id'"
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	<h2>Feedback Form</h2>
+<?php
+// display form if user has not clicked submit
+if (!isset($_POST["submit"]))
+  {
+  ?>
+  <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+  From: <input type="text" name="from"><br>
+  Subject: <input type="text" name="subject"><br>
+  Message: <textarea rows="10" cols="40" name="message"></textarea><br>
+  <input type="submit" name="submit" value="Submit Feedback">
+  </form>
+  <?php 
+  }
+else
+  // the user has submitted the form
+  {
+  // Check if the "from" input field is filled out
+  if (isset($_POST["from"]))
+    {
+    $from = $_POST["from"]; // sender
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+    // message lines should not exceed 70 characters (PHP rule), so wrap it
+    $message = wordwrap($message, 70);
+    // send mail
+    mail("webmaster@example.com",$subject,$message,"From: $from\n");
+    echo "Thank you for sending us feedback";
+    }
+  }
+?>
+
+
+ if( $count%2 == 0 || $count == 0 ) {
+		   echo "<div class='row'>"; 
+		  }
+		  $result.="<div id='results' class='col-sm-4' style='width: 200px;  min-height: 200px;'>";
+		  $result.="<address>";
+		  $result.=$value['title']." ".$value['firstname']." ".$value['lastname']."<br>";
+		  $result.=$value['address1']."<br>";
+		  $result.=$value['address2']."<br>";
+		  $result.=$value['towncity']." - ".$value['postcode']."<br>";
+		  $result.=$value['stateprovince']."<br>";
+		  $result.=$value['country']."<br>";
+		  $result.="</address>";
+		  $result.="</div>";
+		  $result.="<br>";
+		  if( $count%2 == 3 ) { 
+		    echo "</div>"; 
+		  }
+		
+		
+		      $array[$count]['title'] = $row['title'];
+			  $array[$count]['firstname'] = $row['firstname'];
+			  $array[$count]['address1'] = $row['address1'];
+			  $array[$count]['address2'] = $row['address2'];
+			  $array[$count]['towncity'] = $row['towncity'];
+			  $array[$count]['stateprovince'] = $row['stateprovince'];
+			  $array[$count]['country'] = $row['country'];
+			  $array[$count]['postcode'] = $row['postcode'];
