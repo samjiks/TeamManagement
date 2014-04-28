@@ -52,7 +52,7 @@ echo "Welcome, " . $_SESSION["username"];
 include_once('dbconnect.php');
 		
 	
-		$result = mysql_query("SELECT * FROM registration_table", $link);
+		$result = mysql_query("SELECT * FROM registration_table order by firstname", $link);
 		$result_count = mysql_query("SELECT count(*) from registration_table", $link);
 		
 		$get_total_rows  = mysql_fetch_array($result_count);

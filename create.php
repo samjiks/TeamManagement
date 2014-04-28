@@ -18,6 +18,8 @@ include_once('dbconnect.php');
 		$last_name = $_POST['lastname'];
 		$emailaddress = $_POST['emailaddress'];
 		$age = $_POST['age'];
+		$fathersname = $_POST['fathersname'];
+		$fatherphonenumber = $_POST['fatherphonenumber'];
 	
 		
 	if(empty($first_name)){
@@ -150,10 +152,28 @@ include_once('dbconnect.php');
         Age:
       </label>
       <div class="col-md-4">
+        <input type="text" class="form-control" id="age" name="fathersname" value="<?php echo isset($_POST['fathersname']) ? $_POST['fathersname'] : '' ?>" placeholder="Enter Fathers Name">
+      </div>
+    </div>
+    
+	<div class="form-group">
+      <label for="age" class="col-md-2">
+        Father's name:
+      </label>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="fatherphonenumber" name="fatherphonenumber" value="<?php echo isset($_POST['fathersphonenumber']) ? $_POST['fatherphonenumber'] : '' ?>" placeholder="Enter Father's Phone number">
+      </div>
+    </div>
+	
+	<div class="form-group">
+      <label for="age" class="col-md-2">
+        Age:
+      </label>
+      <div class="col-md-4">
         <input type="text" class="form-control" id="age" name="age" value="<?php echo isset($_POST['age']) ? $_POST['age'] : '' ?>" placeholder="Enter the Age">
       </div>
     </div>
- 
+	
     <div class="form-group">
       <label for="Gender" class="col-md-2">
         Gender:

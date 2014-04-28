@@ -25,7 +25,7 @@ if(!is_numeric($page_number)){die('Invalid page number!');}
 $position = ($page_number * $item_per_page);
 
 //Limit our results within a specified range. 
-$results = mysql_query("SELECT * FROM registration_table r LEFT JOIN team_table t ON r.team_id = t.team_id order by assignedteam DESC LIMIT $position, $item_per_page", $link);
+$results = mysql_query("SELECT * FROM registration_table r LEFT JOIN team_table t ON r.team_id = t.team_id order by firstname ASC LIMIT $position, $item_per_page", $link);
 
 //output results from database
 	$array = array();

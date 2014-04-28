@@ -82,11 +82,10 @@
 	ini_set("SMTP","aspmx.l.google.com");
 
 		while($row = mysql_fetch_array($result)){
-			try{
+
 			mail($row['emailaddress'],$subject,"Dear ".$row['firstname']." ".$row['lastname'].",\n\n $message \n\nThanks and Regards\n$from");
-			}catch(
+
 		}
-	echo "Message has 
 	}
 ?>
 
